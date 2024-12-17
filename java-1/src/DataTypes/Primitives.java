@@ -11,7 +11,9 @@ public class Primitives {
         boolean single = true; //;-; é foda parceiro
         Long debts = 98745464848648646L;
 
-        System.out.println(2147483647 + 1); //morreu
-
+        System.out.println("Meu idade é: " + Age);
+        System.out.print("print \n");
+        System.out.println("print line");
+        System.out.println(maxIntValue + 1); //morreu
     }
 }
