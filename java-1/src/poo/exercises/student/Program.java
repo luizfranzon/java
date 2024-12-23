@@ -1,6 +1,6 @@
-package poo.exercises.third;
+package poo.exercises.student;
 
-import poo.exercises.third.entities.Student;
+import poo.exercises.student.entities.Student;
 
 import java.util.Locale;
 import java.util.Scanner;
@@ -10,7 +10,6 @@ public class Program {
         Locale.setDefault(Locale.US);
         Scanner scanner = new Scanner(System.in);
         Student student = new Student();
-        double finalGrade;
 
         System.out.print("Nome: ");
         student.name = scanner.nextLine();
@@ -24,15 +23,13 @@ public class Program {
         System.out.print("Nota do terceiro trimestre: ");
         student.thirdGrade = scanner.nextDouble();
 
-        finalGrade = student.calculateFinalGrade();
-
-        System.out.println("\nNOTA FINAL = " + finalGrade);
+        System.out.println("\nNOTA FINAL = " + student.calculateFinalGrade());
 
         if (student.checkIfIsApproved()) {
             System.out.println("APROVADO!");
         } else {
             System.out.println("REPROVADO!");
-            System.out.println("Faltou " + (60 - finalGrade) + " pontos.");
+            System.out.println("Faltou " + student.calculateFinalGrade() + " pontos.");
         }
 
         scanner.close();
