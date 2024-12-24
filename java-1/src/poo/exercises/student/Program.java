@@ -29,7 +29,7 @@ public class Program {
             System.out.println("APROVADO!");
         } else {
             System.out.println("REPROVADO!");
-            System.out.println("Faltou " + student.calculateFinalGrade() + " pontos.");
+            System.out.println("Faltou " + student.calculateMissingPoints() + " pontos.");
         }
 
         scanner.close();
