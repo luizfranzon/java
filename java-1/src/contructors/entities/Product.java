@@ -1,9 +1,9 @@
 package contructors.entities;
 
 public class Product {
-    public String name;
-    public double price;
-    public int quantity;
+    private String name;
+    private double price;
+    private int quantity;
 
     public Product() {}
 
@@ -18,6 +18,22 @@ public class Product {
         this.quantity = quantity;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public double getPrice() {
+        return this.price;
+    }
+
+    public void setPrime(double price) {
+        this.price = price;
+    }
+
     public double totalValueInStock() {
         return price * quantity;
     }
@@ -27,11 +43,13 @@ public class Product {
     }
 
     public void removeProducts(int quantityToRemove) {
-        int currentProductQuantity = this.quantity;
 
-        if ((currentProductQuantity - quantityToRemove) < currentProductQuantity) {
-            this.quantity -= quantityToRemove;
+        if (this.quantity <= quantityToRemove) {
+            this.quantity = 0;
+            return;
         }
+
+        this.quantity -= quantityToRemove;
     }
 
     public String toString() {
